@@ -1,20 +1,5 @@
 FF:
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/school_scooter/14.pcd
-  pointCloud_fileName: /home/bichunh/catkin_ws/src/data/school_scooter/20.pcd
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/school_scooter/34.pcd
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/school_scooter/48.pcd
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/units_dolly/128_5.pcd
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/units_dolly/128_6.pcd
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/units_dolly/clusters1.pcd
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/units_dolly/clusters2.pcd
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/units_dolly/long_corrider1.pcd
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/units_dolly/long_corrider2.pcd
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/corrider_dolly/1455.pcd
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/corrider_dolly/1473.pcd
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/corrider_dolly/1483.pcd
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/corrider_dolly/1494.pcd
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/corrider_dolly/1512.pcd
-  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/corrider_dolly/1527.pcd
+  pointCloud_fileName: /src/FloodFill_For_LiDAR/test.pcd
   IMAGE_WIDTH: 2048
   IMAGE_HEIGHT: 128
 
