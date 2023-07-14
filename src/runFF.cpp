@@ -34,63 +34,63 @@ int main(int argc, char *argv[])
 
 ///////////////////////////////////////////////////////////////////////////// DDPFF part////////////////////////////////////////////////////////////////////////////////////////////////////
         loadPointCloud(pointcloud, pointcloudbuffer);
-        // DDPFF ddpff(config);
-        // ddpff.init();
-        // ddpff.setBuffer(&pointcloudbuffer);
-        // ddpff.compute();
+        DDPFF ddpff(config);
+        ddpff.init();
+        ddpff.setBuffer(&pointcloudbuffer);
+        ddpff.compute();
 
-        // // for visualization purpose
-        // std::vector< PlanePointNormal > plane_list = ddpff.getPlanes();
-        // size_t plan_number = plane_list.size();
-        // for (int i = 0; i < plan_number; i++) 
-        // {
-        //     // generate random color
-        //     uint8_t r,g,b;
-        //     srand(i);
-        //     r = rand()%255;
-        //     srand(i + plan_number);
-        //     g = rand()%255;
-        //     srand(i + plan_number + plan_number);
-        //     b = rand()%255;
+        // for visualization purpose
+        std::vector< PlanePointNormal > plane_list = ddpff.getPlanes();
+        size_t plan_number = plane_list.size();
+        for (int i = 0; i < plan_number; i++) 
+        {
+            // generate random color
+            uint8_t r,g,b;
+            srand(i);
+            r = rand()%255;
+            srand(i + plan_number);
+            g = rand()%255;
+            srand(i + plan_number + plan_number);
+            b = rand()%255;
             
-        //     for (size_t inlier : plane_list[i].inliers) 
-        //     {
-        //         pcl::PointXYZRGB point(r,g,b);
-        //         point.x = pointcloudbuffer[inlier].x();
-        //         point.y = pointcloudbuffer[inlier].y();
-        //         point.z = pointcloudbuffer[inlier].z();
-        //         pointcloud_colored->points.push_back(point);
-        //     }
-        // }
+            for (size_t inlier : plane_list[i].inliers) 
+            {
+                pcl::PointXYZRGB point(r,g,b);
+                point.x = pointcloudbuffer[inlier].x();
+                point.y = pointcloudbuffer[inlier].y();
+                point.z = pointcloudbuffer[inlier].z();
+                pointcloud_colored->points.push_back(point);
+            }
+        }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////// Region growing////////////////////////////////////////////////////////////////////////////////////////////////////
-        pcl::search::Search< PointType >::Ptr  tree(new pcl::search::KdTree< PointType >());
-        // Normal compute
-        pcl::PointCloud< pcl::Normal >::Ptr normals(new pcl::PointCloud< pcl::Normal >());
-        pcl::NormalEstimation< PointType, pcl::Normal > normal_estimator;
-        normal_estimator.setSearchMethod(tree);
-        normal_estimator.setInputCloud(pointcloud);
-        normal_estimator.setKSearch(50);
-        normal_estimator.compute(*normals);
-        cout << "Normal computed" << endl;
+        // pcl::search::Search< PointType >::Ptr  tree(new pcl::search::KdTree< PointType >());
+        // // Normal compute
+        // pcl::PointCloud< pcl::Normal >::Ptr normals(new pcl::PointCloud< pcl::Normal >());
+        // pcl::NormalEstimation< PointType, pcl::Normal > normal_estimator;
+        // normal_estimator.setSearchMethod(tree);
+        // normal_estimator.setInputCloud(pointcloud);
+        // normal_estimator.setKSearch(50);
+        // normal_estimator.compute(*normals);
+        // cout << "Normal computed" << endl;
 
-        // RegionGrowing
-        pcl::RegionGrowing< PointType, pcl::Normal > reg;
-        reg.setMinClusterSize(50);
-        reg.setMaxClusterSize(1000000);
-        reg.setSearchMethod(tree);
-        reg.setNumberOfNeighbours(30);
-        reg.setInputCloud(pointcloud);
-        reg.setInputNormals(normals);
-        reg.setSmoothnessThreshold(3.0 / 180.0 * M_PI);
-        reg.setCurvatureThreshold(1.0);
+        // // RegionGrowing
+        // pcl::RegionGrowing< PointType, pcl::Normal > reg;
+        // reg.setMinClusterSize(50);
+        // reg.setMaxClusterSize(1000000);
+        // reg.setSearchMethod(tree);
+        // reg.setNumberOfNeighbours(30);
+        // reg.setInputCloud(pointcloud);
+        // reg.setInputNormals(normals);
+        // reg.setSmoothnessThreshold(3.0 / 180.0 * M_PI);
+        // reg.setCurvatureThreshold(1.0);
         
-        //
-        vector< pcl::PointIndices > clusters;
-        reg.extract(clusters);
-        cout << "Number of clusters is equal to " << clusters.size() << endl;
-        pointcloud_colored = reg.getColoredCloud();
+        // //
+        // vector< pcl::PointIndices > clusters;
+        // reg.extract(clusters);
+        // cout << "Number of clusters is equal to " << clusters.size() << endl;
+        // pointcloud_colored = reg.getColoredCloud();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // Visualization part
