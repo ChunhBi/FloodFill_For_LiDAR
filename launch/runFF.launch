@@ -1,0 +1,15 @@
+<launch>
+
+    <arg name="project" default="lidar_floodfill"/>
+    
+    <!-- Parameters -->
+    <!-- <rosparam file="$(dirname)/../config/params.yaml" command="load" /> -->
+    <rosparam file="$(find lidar_floodfill)/configs/default.yaml" command="load" />
+
+    <!--- FF -->
+    <node pkg="$(arg project)" type="$(arg project)_runFF"     name="$(arg project)_runFF"      output="screen"/>
+
+    <!--- Run Rviz-->
+    <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find lidar_floodfill)/launch/viz.rviz" /> -->
+
+</launch>

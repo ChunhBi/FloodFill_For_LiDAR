@@ -1,0 +1,44 @@
+FF:
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/school_scooter/14.pcd
+  pointCloud_fileName: /home/bichunh/catkin_ws/src/data/school_scooter/20.pcd
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/school_scooter/34.pcd
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/school_scooter/48.pcd
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/units_dolly/128_5.pcd
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/units_dolly/128_6.pcd
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/units_dolly/clusters1.pcd
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/units_dolly/clusters2.pcd
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/units_dolly/long_corrider1.pcd
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/units_dolly/long_corrider2.pcd
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/corrider_dolly/1455.pcd
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/corrider_dolly/1473.pcd
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/corrider_dolly/1483.pcd
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/corrider_dolly/1494.pcd
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/corrider_dolly/1512.pcd
+  # pointCloud_fileName: /home/bichunh/catkin_ws/src/data/corrider_dolly/1527.pcd
+  IMAGE_WIDTH: 2048
+  IMAGE_HEIGHT: 128
+
+  bufferSize: 30
+  sampleFactor: 1
+
+  pointThresholdFloodFill_min: 0.001 
+  pointThresholdFloodFill_max: 0.1 
+  c_point: 0.1 
+
+  normalSampleDistance_min: 4.0
+  normalSampleDistance_max: 20.0
+  c_range: 1.0 
+
+  planeThresholdFloodFill_flood: 0.0001 
+  planeThresholdFloodFill_merge: 0.01 
+  planeThresholdFloodFill_flood_max: 0.01 
+  planeThresholdFloodFill_merge_max: 0.1 
+  angleThresholdFloodFill: 0.05 
+  angleThresholdFloodFill_max: 0.2 
+  minPlaneSize: 1000 
+  # c_plane: 1
+  c_plane: 1.5 
+  # c_plane_merge: 1 
+  c_plane_merge: 8 
+  # c_angle: 1
+  c_angle: 2 
