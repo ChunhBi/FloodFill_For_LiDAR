@@ -2,9 +2,9 @@
 <package>
   <name>lidar_floodfill</name>
   <version>1.0.0</version>
-  <description>Flood_Fill on LiDar Point Cloud</description>
+  <description>Flood_Fill on LiDAR Point Cloud</description>
 
-  <maintainer email="bichh@shanghaitech.edu.cn">Chunhao Bi</maintainer>
+  <maintainer email="bch1755@outlook.com">Chunh Bi</maintainer>
 
   <license>BSD</license>
 

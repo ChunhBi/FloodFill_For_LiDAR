@@ -315,7 +315,7 @@ void DDPFF::merge(bool unidir) {
 }
 
 
-// // New implemented version
+// // New implemented version, this version is observed to occasionally cause memory leak when used in FP-Loc.
 // void DDPFF::merge(bool unidir)
 // {
 //     planeSegParamsPtr_t plane =  std::make_shared<PlaneSegParams>();
@@ -883,6 +883,7 @@ void DDPFF::FloodFill::mark(const size_t y, const size_t lx, const size_t rx, co
     }
 }
 
+// New implemented Flood function
 size_t DDPFF::FloodFill::flood(const size_t& startRow, const size_t& startCol, const size_t& label, const Seed& seed) {
     const size_t& seedIndex = startRow * outer_.width_ + startCol;
     // Seed label already marked
