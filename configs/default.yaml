@@ -1,8 +1,8 @@
 FF: 
   # Setup parameters.
-  pointCloud_fileName: /src/FloodFill_For_LiDAR/test.pcd
+  pointCloud_fileName: /home/erwin/catkin_ws/src/FloodFill_For_LiDAR/1629379207.388575077.pcd
   IMAGE_WIDTH: 2048
-  IMAGE_HEIGHT: 128
+  IMAGE_HEIGHT: 64
 
   bufferSize: 30
   sampleFactor: 1
